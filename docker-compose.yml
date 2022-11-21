@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   # servis aplikasi
@@ -11,6 +11,9 @@ services:
     # mapping port container 8080 ke port host 80
     ports:
       - 80:8080
+    # mulai lagi jika stop
+    restart: always
+
   # servis database
   item-db:
     # menggunakan image mongoDB dari docker hub
@@ -18,6 +21,8 @@ services:
     # mount app-db ke /data/db
     volumes:
       - app-db:/data/db
+    # mulai lagi jika stop
+    restart: always
 
 # volume yang digunakan
 volumes:
