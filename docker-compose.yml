@@ -1,1 +1,24 @@
 version: "2"
+
+services:
+  # servis aplikasi
+  item-app:
+    # menggunakan image yang dibuat
+    image: hilmatrix/item-app:v1
+    # servis ini menunggu item-db jalan dahulu
+    depends_on:
+      - item-db
+    # mapping port container 8080 ke port host 80
+    ports:
+      - 80:8080
+  # servis database
+  item-db:
+    # menggunakan image mongoDB dari docker hub
+    image: mongo:3
+    # mount app-db ke /data/db
+    volumes:
+      - app-db:/data/db
+
+# volume yang digunakan
+volumes:
+  app-db:
