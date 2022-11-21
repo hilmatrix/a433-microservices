@@ -4,7 +4,7 @@ services:
   # servis aplikasi
   item-app:
     # menggunakan image yang dibuat
-    image: hilmatrix/item-app:v1
+    image: ghcr.io/hilmatrix/item-app:v1
     # servis ini menunggu item-db jalan dahulu
     depends_on:
       - item-db
