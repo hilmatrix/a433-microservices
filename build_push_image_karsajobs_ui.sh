@@ -7,7 +7,6 @@ docker image ls
 # login github 
 echo $GITHUB_TOKEN | docker login ghcr.io -u hilmatrix --password-stdin
 
-# menargetkan image yg dibuat untuk upload ke ghcr.io
-# image ini nanti yang dipakai lewat docker-compose.yml
+# menargetkan image frontend yg dibuat untuk upload ke ghcr.io
 docker tag karsajobs-ui:latest ghcr.io/hilmatrix/karsajobs-ui:latest
 docker push ghcr.io/hilmatrix/karsajobs-ui:latest
